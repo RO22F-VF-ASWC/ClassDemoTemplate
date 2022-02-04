@@ -6,8 +6,19 @@ using System.Threading.Tasks;
 
 namespace MyLib
 {
+    /// <summary>
+    /// Silly class with only one method
+    /// </summary>
     public class SomeClass
     {
+        /// <summary>
+        /// Silly method to mulitply a number with a number value in a string
+        /// </summary>
+        /// <param name="x">the value to be multiplied</param>
+        /// <param name="n">a string which must be '2' or '3'</param>
+        /// <returns>the value of n multiplied by the value of n</returns>
+        /// <exception cref="ArgumentNullException">If the n is null or empty</exception>
+        /// <exception cref="ArgumentException">if the n is not either '2' or '3' </exception>
         public int SomeMethod(int x, String n)
         {
             if (string.IsNullOrWhiteSpace(n)) throw new ArgumentNullException("n must have a value but was null or empty");
@@ -19,7 +30,7 @@ namespace MyLib
                 case "3": return x * 3;
             }
 
-            throw new NotImplementedException("");
+            return -1;
         }
     }
 }
