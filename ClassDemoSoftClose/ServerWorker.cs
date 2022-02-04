@@ -29,7 +29,7 @@ namespace ClassDemoSoftClose
 
             while (!STOP)
             {
-                if (listener.Pending())
+                if (listener.Pending()) // any waiting clients
                 {
                     TcpClient client = listener.AcceptTcpClient();
                     Console.WriteLine("Client incoming");
@@ -48,6 +48,7 @@ namespace ClassDemoSoftClose
                 }
             }
 
+            Console.WriteLine("Server Starts Stopping");
             Task.WaitAll(tasks.ToArray());
             Console.WriteLine("Server Stopped");
         }
